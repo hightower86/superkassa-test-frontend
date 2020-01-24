@@ -1,0 +1,3 @@
+const BUTTON_PRESS = 'BUTTON_PRESS';
+
+export { BUTTON_PRESS };
