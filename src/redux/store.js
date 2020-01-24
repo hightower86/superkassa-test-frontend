@@ -3,13 +3,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './reducers';
 
-//const initialState = {};
-
-//const middleware = [];
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools() //applyMiddleware(...middleware))
+  composeWithDevTools() 
 );
 
 export default store;
