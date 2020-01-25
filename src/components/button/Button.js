@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { pressButton } from '../../redux/actions/button-actions';
 
 const Button = ({ keyOn, pressButton }) => {
-  //const [keyState, setKeyState] = useState(keyOn);
-  //const state = 'OFF';
   console.log(keyOn);
   return (
     <div onClick={pressButton} className='btn'>

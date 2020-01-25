@@ -1,7 +1,18 @@
-import { BUTTON_PRESS } from '../actions/types.js';
+import { BUTTON_PRESS, STATE_ERROR } from '../actions/types.js';
+import firebase from '../../firebase';
+
+const fetchData = async () => {
+  try {
+    const db = firebase.firestore();
+    const data = await db.collection('button_state').get();
+    return data.docs[0].data().state;
+  } catch (error) {
+    return false;
+  }
+};
 
 const initialState = {
-  keyOn: false
+  keyOn: fetchData()
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +20,12 @@ export default (state = initialState, action) => {
     case BUTTON_PRESS:
       return {
         ...state,
-        keyOn: !state.keyOn
+        keyOn: action.payload
+      };
+    case STATE_ERROR:
+      return {
+        ...state,
+        keyOn: 'false'
       };
 
     default:

@@ -1,3 +1,4 @@
 const BUTTON_PRESS = 'BUTTON_PRESS';
+const STATE_ERROR = 'STATE_ERROR';
 
-export { BUTTON_PRESS };
+export { BUTTON_PRESS, STATE_ERROR };
