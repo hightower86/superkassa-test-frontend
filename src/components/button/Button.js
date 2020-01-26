@@ -6,7 +6,10 @@ import './button.css';
 const Button = ({ btnState, setBtnState }) => {
   console.log(btnState);
   return (
-    <div onClick={setBtnState} className={`btn ${btnState ? 'pressed' : ''}`}>
+    <div
+      onClick={() => setBtnState(!btnState)}
+      className={`btn ${btnState ? 'pressed' : ''}`}
+    >
       {btnState ? 'ON' : 'OFF'}
     </div>
   );
