@@ -1,7 +1,7 @@
 import { BUTTON_PRESS, STATE_ERROR } from '../actions/types.js';
 import firebase from '../../firebase';
 
-const fetchData = async () => {
+const fetchState = async () => {
   try {
     const db = firebase.firestore();
     const data = await db.collection('button_state').get();
@@ -12,7 +12,7 @@ const fetchData = async () => {
 };
 
 const initialState = {
-  keyOn: fetchData()
+  keyOn: fetchState()
 };
 
 export default (state = initialState, action) => {

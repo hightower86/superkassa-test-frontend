@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from './components/button';
 import firebase from './firebase';
 
+const getButtonState = async () => {
+  const db = firebase.firestore();
+  const data = await db.collection('button_state').get();
+  return data.docs[0].data().state;
+  //console.log();
+};
+
 const App = () => {
-  const onFetch = async () => {
-    const db = firebase.firestore();
-    const data = await db.collection('button_state').get();
-    console.log(data.docs[0].data().state);
-  };
+  const [buttonState, setButtonState] = useState(false);
 
   return (
     <div className='container'>
-      {/* <button
-        onClick={() => onFetch()}
-        style={{ padding: '2rem', margin: '2rem' }}
-      >
-        fetch
-      </button> */}
-      <Button />
+      <Button
+        btnState={buttonState}
+        setBtnState={() => setButtonState(!buttonState)}
+      />
     </div>
   );
 };

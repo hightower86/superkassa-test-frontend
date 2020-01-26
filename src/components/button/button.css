@@ -1,7 +1,7 @@
 .btn {
   width: 150px;
   height: 150px;
-  background-color: dimgrey;
+  background-color: rgb(155, 18, 18);
   color: rgb(196, 196, 196);
   display: flex;
   justify-content: center;
@@ -10,12 +10,15 @@
   font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 1px 1px 1px #e7e7e7;
-  box-shadow: 2px 2px 0px 2px #b6b6b6;
+  box-shadow: 2px 2px 0px 2px #bd7c7c;
   transition: box-shadow 0.3s ease, transform 0.3 ease;
   cursor: pointer;
 }
 
-.btn:active {
-  box-shadow: 0 0 0 #b6b6b6, inset 2px 2px 0 2px #b6b6b6;
+.pressed {
+  background-color: rgb(255, 14, 14);
+  color: #fff;
+  /* box-shadow: 0 0 0 #444444, inset 2px 2px 0 2px #6e6e6e; */
+  box-shadow: 0 0 0 #444444;
   transform: translate(4px, 4px);
 }
